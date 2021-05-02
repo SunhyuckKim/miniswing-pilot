@@ -45,8 +45,8 @@ public class OrdersApiControllerTest {
     public void 오더정보_등록된다() throws Exception {
 
         //given
-        Integer svc_mgmt_num = 1234567890;
-        Integer acnt_mum = 1234567890;
+        long svc_mgmt_num = 1234567890;
+        long acnt_mum = 1234567890;
         String prod_id = "NA00000000";
         String svc_scrb_dt = "20210428";
         OrdersSaveRequestDto requestDto = OrdersSaveRequestDto.builder()
@@ -76,8 +76,8 @@ public class OrdersApiControllerTest {
     public void 오더정보_수정된다() throws Exception {
 
         //given
-        Integer svc_mgmt_num = 1234567890;
-        Integer acnt_mum = 1234567890;
+        long svc_mgmt_num = 1234567890;
+        long acnt_mum = 1234567890;
         String prod_id = "NA00000000";
         String svc_scrb_dt = "20210428";
 
@@ -90,7 +90,7 @@ public class OrdersApiControllerTest {
 
         Long updateId = savedOrders.getId();
         //Integer expectedSvc_mgmt_num = 1234567891;
-        Integer expectedAcnt_num = 1234567891;
+        long expectedAcnt_num = 1234567891;
         String expectedProd_id = "NA00000002";
         String expectedSvc_scrb_dt = "20210429";
 
@@ -100,7 +100,7 @@ public class OrdersApiControllerTest {
                 .svc_scrb_dt(expectedSvc_scrb_dt)
                 .build();
 
-        String url = "http://localhost:" + port + "/api/v1/orders" + updateId;
+        String url = "http://localhost:" + port + "/api/v1/orders/" + updateId;
 
         HttpEntity<OrdersUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
 

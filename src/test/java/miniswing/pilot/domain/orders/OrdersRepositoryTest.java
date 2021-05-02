@@ -29,8 +29,8 @@ public class OrdersRepositoryTest {
     public void 오더정보_조회된다() {
 
         //given
-        Integer svc_mgmt_num = 1234567890;
-        Integer acnt_num = 1234567890;
+        long svc_mgmt_num = 1234567890;
+        long acnt_num = 1234567890;
         String prod_id = "NA00000001";
         String svc_scrb_dt = "20210428";
 

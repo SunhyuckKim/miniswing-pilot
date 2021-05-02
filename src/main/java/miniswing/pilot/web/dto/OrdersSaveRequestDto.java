@@ -9,12 +9,12 @@ import miniswing.pilot.domain.Orders;
 @NoArgsConstructor
 public class OrdersSaveRequestDto {
 
-    private Integer svc_mgmt_num;
-    private Integer acnt_num;
+    private long svc_mgmt_num;
+    private long acnt_num;
     private String prod_id;
     private String svc_scrb_dt;
     @Builder
-    public OrdersSaveRequestDto(Integer svc_mgmt_num, Integer acnt_num, String prod_id, String svc_scrb_dt) {
+    public OrdersSaveRequestDto(long svc_mgmt_num, long acnt_num, String prod_id, String svc_scrb_dt) {
         this.svc_mgmt_num = svc_mgmt_num;
         this.acnt_num = acnt_num;
         this.prod_id = prod_id;

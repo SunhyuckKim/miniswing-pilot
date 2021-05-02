@@ -16,10 +16,10 @@ public class Orders {
     private Long id;
 
     @Column(length = 10, nullable = false)
-    private Integer svc_mgmt_num;
+    private long svc_mgmt_num;
 
     @Column(length = 10, nullable = false)
-    private Integer acnt_num;
+    private long acnt_num;
 
     @Column(length = 10, nullable = false)
     private String prod_id;
@@ -28,14 +28,14 @@ public class Orders {
     private String svc_scrb_dt;
 
     @Builder
-    public Orders(Integer svc_mgmt_num, Integer acnt_num, String prod_id, String svc_scrb_dt) {
+    public Orders(long svc_mgmt_num, long acnt_num, String prod_id, String svc_scrb_dt) {
         this.svc_mgmt_num = svc_mgmt_num;
         this.acnt_num = acnt_num;
         this.prod_id = prod_id;
         this.svc_scrb_dt = svc_scrb_dt;
     }
 
-    public void update(Integer acnt_num, String prod_id, String svc_scrb_dt) {
+    public void update(long acnt_num, String prod_id, String svc_scrb_dt) {
         this.acnt_num = acnt_num;
         this.prod_id = prod_id;
         this.svc_scrb_dt = svc_scrb_dt;

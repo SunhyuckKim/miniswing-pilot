@@ -7,8 +7,8 @@ import miniswing.pilot.domain.Orders;
 public class OrdersResponseDto {
 
     private Long id;
-    private Integer svc_mgmt_num;
-    private Integer acnt_num;
+    private long svc_mgmt_num;
+    private long acnt_num;
     private String prod_id;
     private String svc_scrb_dt;
 
