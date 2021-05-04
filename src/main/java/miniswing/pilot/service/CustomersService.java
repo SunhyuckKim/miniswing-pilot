@@ -3,11 +3,9 @@ package miniswing.pilot.service;
 import lombok.RequiredArgsConstructor;
 import miniswing.pilot.domain.Customers;
 import miniswing.pilot.domain.CustomersRepository;
-import miniswing.pilot.domain.Orders;
 import miniswing.pilot.web.dto.CustomersResponseDto;
 import miniswing.pilot.web.dto.CustomersSaveRequestDto;
 import miniswing.pilot.web.dto.CustomersUpdateRequestDto;
-import miniswing.pilot.web.dto.OrdersUpdateRequestDto;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

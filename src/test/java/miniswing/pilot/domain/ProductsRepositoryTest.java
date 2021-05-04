@@ -1,4 +1,4 @@
-package miniswing.pilot.domain.orders;
+package miniswing.pilot.domain;
 
 import miniswing.pilot.domain.Products;
 import miniswing.pilot.domain.ProductsRepository;
