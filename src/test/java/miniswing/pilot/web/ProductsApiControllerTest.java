@@ -1,10 +1,7 @@
 package miniswing.pilot.web;
 
-import miniswing.pilot.domain.Orders;
 import miniswing.pilot.domain.Products;
 import miniswing.pilot.domain.ProductsRepository;
-import miniswing.pilot.web.dto.OrdersSaveRequestDto;
-import miniswing.pilot.web.dto.OrdersUpdateRequestDto;
 import miniswing.pilot.web.dto.ProductsSaveRequestDto;
 import miniswing.pilot.web.dto.ProductsUpdateRequestDto;
 import org.junit.After;
