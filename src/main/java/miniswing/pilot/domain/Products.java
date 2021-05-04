@@ -16,6 +16,7 @@ public class Products {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(length = 10, nullable = false)
     private String prod_id;
 
