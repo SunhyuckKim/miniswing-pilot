@@ -18,6 +18,9 @@ public class OrdsProdsRepositoryTest {
     @Autowired
     OrdsProdsRepository ordsProdsRepository;
 
+    @Autowired
+    ProductsRepository productsRepository;
+
     @After
     public void cleanup() {
         ordsProdsRepository.deleteAll();
@@ -35,6 +38,7 @@ public class OrdsProdsRepositoryTest {
         ordsProdsRepository.save(OrdsProds.builder()
                 .svc_mgmt_num1(svc_mgmt_num1)
                 .acnt_num1(acnt_num1)
+                //.prod_id
                 .svc_scrb_dt1(svc_scrb_dt1)
                 .build());
 
@@ -45,7 +49,7 @@ public class OrdsProdsRepositoryTest {
         OrdsProds ordsProds = ordsProdsList.get(0);
         assertThat(ordsProds.getSvc_mgmt_num1()).isEqualTo(svc_mgmt_num1);
         assertThat(ordsProds.getAcnt_num1()).isEqualTo(acnt_num1);
-        assertThat(ordsProds.getProducts()).isEqualTo(prod_id);
+        assertThat(ordsProds.getProds()).isEqualTo(prod_id);
         assertThat(ordsProds.getSvc_scrb_dt1()).isEqualTo(svc_scrb_dt1);
     }
 

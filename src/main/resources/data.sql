@@ -12,3 +12,6 @@ insert into customers (id, svc_mgmt_num, cust_num, cust_nm, gender_cd) values (1
 
 --select * from orders;
 
+insert into ords_prods (prod_id, acnt_num1, svc_mgmt_num1, svc_scrb_dt1) values ('NA00000001', 1234567890, 1234567890,  '20210428');
+
+insert into prods (prod_id, prod_nm) values ('NA00000001', '기본요금제');

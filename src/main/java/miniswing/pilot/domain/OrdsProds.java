@@ -13,8 +13,10 @@ import javax.persistence.*;
 public class OrdsProds {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue
+    //(strategy = GenerationType.IDENTITY)
+    @Column(name = "prod_id")
+    private String id;
 
     @Column(length = 10, nullable = false)
     private long svc_mgmt_num1;
@@ -22,19 +24,22 @@ public class OrdsProds {
     @Column(length = 10, nullable = false)
     private long acnt_num1;
 
-    @OneToOne
-    @JoinColumn(name="prod_id")
-    private Products products;
+//    @Column(length = 8, nullable = false)
+//    private Products products;
 
     @Column(length = 8, nullable = false)
     private String svc_scrb_dt1;
 
+    @OneToOne
+    @JoinColumn(name="prod_id")
+    private Prods prods;
+
 
     @Builder
-    public OrdsProds(long svc_mgmt_num1, long acnt_num1, Products products, String svc_scrb_dt1) {
+    public OrdsProds(long svc_mgmt_num1, long acnt_num1, Prods prods, String svc_scrb_dt1) {
         this.svc_mgmt_num1 = svc_mgmt_num1;
         this.acnt_num1 = acnt_num1;
-        this.products = products;
+        this.prods = prods;
         this.svc_scrb_dt1 = svc_scrb_dt1;
     }
 

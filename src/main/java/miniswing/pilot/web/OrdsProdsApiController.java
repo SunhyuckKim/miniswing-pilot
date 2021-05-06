@@ -13,8 +13,8 @@ public class OrdsProdsApiController {
 
     private final OrdsProdsService ordsProdsService;
 
-    @GetMapping("/api/v1/ordsprods/{id}") //조회
-    public OrdsProdsResponseDto findById (@PathVariable Long id) {
+    @GetMapping("/api/v1/ordsprods/{prod_id}") //조회
+    public OrdsProdsResponseDto findById (@PathVariable("prod_id") String id) {
         return ordsProdsService.findById(id);
     }
 }
