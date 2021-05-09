@@ -16,15 +16,15 @@ public class CustomersService {
     private final CustomersRepository customersRepository;
 
     //고객정보조회
-    public CustomersResponseDto findById(Long id) {
-        Customers entity = customersRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("해당 서비스가 없습니다. id=" + id));
+    public CustomersResponseDto findById(Long cust_num) {
+        Customers entity = customersRepository.findById(cust_num).orElseThrow(() -> new IllegalArgumentException("해당 고객번호가 없습니다. id=" + cust_num));
 
         return new CustomersResponseDto(entity);
     }
 
     @Transactional //고객정보 저장
     public Long save(CustomersSaveRequestDto requestDto) {
-        return customersRepository.save(requestDto.toEntity()).getId();
+        return customersRepository.save(requestDto.toEntity()).getCust_num();
     }
 
     @Transactional

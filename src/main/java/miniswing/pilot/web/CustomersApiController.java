@@ -17,13 +17,13 @@ public class CustomersApiController {
         return customersService.save(requestDto);
     }
 
-    @GetMapping("/api/v1/customers/{id}") //조회
-    public CustomersResponseDto findById (@PathVariable Long id) {
-        return customersService.findById(id);
+    @GetMapping("/api/v1/customers/{cust_num}") //조회
+    public CustomersResponseDto findById (@PathVariable Long cust_num) {
+        return customersService.findById(cust_num);
     }
 
-    @PutMapping("/api/v1/customers/{id}") //업데이트
-    public Long update(@PathVariable Long id, @RequestBody CustomersUpdateRequestDto requestDto) {
-        return customersService.update(id, requestDto);
+    @PutMapping("/api/v1/customers/{cust_num}") //업데이트
+    public Long update(@PathVariable Long cust_num, @RequestBody CustomersUpdateRequestDto requestDto) {
+        return customersService.update(cust_num, requestDto);
     }
 }

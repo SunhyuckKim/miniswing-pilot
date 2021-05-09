@@ -15,8 +15,8 @@ public class OrdsProdsService {
     private final OrdsProdsRepository ordsProdsRepository;
 
     //고객정보 조회
-    public OrdsProdsResponseDto findById(String prod_id) {
-        OrdsProds entity = ordsProdsRepository.findById(prod_id).orElseThrow(() -> new IllegalArgumentException("해당 서비스가 없습니다. id=" + prod_id));
+    public OrdsProdsResponseDto findById(long svc_mgmt_num) {
+        OrdsProds entity = ordsProdsRepository.findById(svc_mgmt_num).orElseThrow(() -> new IllegalArgumentException("해당 서비스관리번호가 없습니다. =" + svc_mgmt_num));
 
         return new OrdsProdsResponseDto(entity);
     }

@@ -30,16 +30,17 @@ public class OrdsProdsRepositoryTest {
     public void 오더상품정보_조회된다() {
 
         //given
-        long svc_mgmt_num1 = 1234567890;
-        long acnt_num1 = 1234567890;
-        String prod_id = "NA00000001";
-        String svc_scrb_dt1 = "20210428";
+        long svc_mgmt_num = 1234567890;
+        long cust_num = 1234567890;
+//        Prods prods = "NA00000001";
+        String svc_scrb_dt = "20210428";
 
         ordsProdsRepository.save(OrdsProds.builder()
-                .svc_mgmt_num1(svc_mgmt_num1)
-                .acnt_num1(acnt_num1)
-                //.prod_id
-                .svc_scrb_dt1(svc_scrb_dt1)
+                .svc_mgmt_num(svc_mgmt_num)
+//                .cust_num(cust_num)
+ //               .prods(prod_id)
+                //.prods(prods)
+                .svc_scrb_dt(svc_scrb_dt)
                 .build());
 
         //when
@@ -47,10 +48,10 @@ public class OrdsProdsRepositoryTest {
 
         //then
         OrdsProds ordsProds = ordsProdsList.get(0);
-        assertThat(ordsProds.getSvc_mgmt_num1()).isEqualTo(svc_mgmt_num1);
-        assertThat(ordsProds.getAcnt_num1()).isEqualTo(acnt_num1);
-        assertThat(ordsProds.getProds()).isEqualTo(prod_id);
-        assertThat(ordsProds.getSvc_scrb_dt1()).isEqualTo(svc_scrb_dt1);
+        assertThat(ordsProds.getSvc_mgmt_num()).isEqualTo(svc_mgmt_num);
+//        assertThat(ordsProds.getCust_num()).isEqualTo(cust_num);
+//        assertThat(ordsProds.getProds()).isEqualTo(prod_id);
+        assertThat(ordsProds.getSvc_scrb_dt()).isEqualTo(svc_scrb_dt);
     }
 
 }

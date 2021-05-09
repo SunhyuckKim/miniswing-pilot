@@ -13,34 +13,33 @@ import javax.persistence.*;
 public class OrdsProds {
 
     @Id
-    @GeneratedValue
-    //(strategy = GenerationType.IDENTITY)
-    @Column(name = "prod_id")
-    private String id;
+    @Column(name = "svc_mgmt_num")
+    private long svc_mgmt_num;
 
-    @Column(length = 10, nullable = false)
-    private long svc_mgmt_num1;
 
-    @Column(length = 10, nullable = false)
-    private long acnt_num1;
+//    @Column(length = 10, nullable = false)
+//    private long cust_num;
 
-//    @Column(length = 8, nullable = false)
-//    private Products products;
 
     @Column(length = 8, nullable = false)
-    private String svc_scrb_dt1;
+    private String svc_scrb_dt;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name="prod_id")
     private Prods prods;
 
+    @OneToOne
+    @JoinColumn(name="cust_num")
+    private Customers customers;
+
+
 
     @Builder
-    public OrdsProds(long svc_mgmt_num1, long acnt_num1, Prods prods, String svc_scrb_dt1) {
-        this.svc_mgmt_num1 = svc_mgmt_num1;
-        this.acnt_num1 = acnt_num1;
+    public OrdsProds(long svc_mgmt_num, Customers customers, Prods prods, String svc_scrb_dt) {
+        this.svc_mgmt_num = svc_mgmt_num;
+        this.customers = customers;
         this.prods = prods;
-        this.svc_scrb_dt1 = svc_scrb_dt1;
+        this.svc_scrb_dt = svc_scrb_dt;
     }
 
 

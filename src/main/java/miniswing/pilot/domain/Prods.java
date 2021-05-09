@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -20,8 +22,8 @@ public class Prods {
     @Column(length = 100, nullable = false)
     private String prod_nm;
 
-    //@OneToOne(mappedBy = "prods")
-    //private OrdsProds ordsProds;
+   // @OneToMany (fetch = FetchType.LAZY, mappedBy = "prods")
+  //  private List<OrdsProds> ordsProds = new ArrayList<>();
 
     @Builder
     public Prods(String prod_id, String prod_nm) {

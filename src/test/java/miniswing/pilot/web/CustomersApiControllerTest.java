@@ -2,11 +2,8 @@ package miniswing.pilot.web;
 
 import miniswing.pilot.domain.Customers;
 import miniswing.pilot.domain.CustomersRepository;
-import miniswing.pilot.domain.Orders;
 import miniswing.pilot.web.dto.CustomersSaveRequestDto;
 import miniswing.pilot.web.dto.CustomersUpdateRequestDto;
-import miniswing.pilot.web.dto.OrdersSaveRequestDto;
-import miniswing.pilot.web.dto.OrdersUpdateRequestDto;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -85,7 +82,7 @@ public class CustomersApiControllerTest {
                 .gender_cd(gender_cd)
                 .build());
 
-        Long updateId = savedCustomers.getId();
+        Long updateId = savedCustomers.getCust_num();
         String expectedCust_nm = "언년이";
         String expectedGender_cd = "2";
 

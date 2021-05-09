@@ -35,10 +35,10 @@ public class CustomersRepositoryTest {
         String gender_cd = "1";
 
         customersRepository.save(Customers.builder()
-                .svc_mgmt_num(svc_mgmt_num)
                 .cust_num(cust_num)
                 .cust_nm(cust_nm)
                 .gender_cd(gender_cd)
+                .svc_mgmt_num(svc_mgmt_num)
                 .build());
 
         //when
@@ -46,10 +46,10 @@ public class CustomersRepositoryTest {
 
         //then
         Customers customers = customersList.get(0);
-        assertThat(customers.getSvc_mgmt_num()).isEqualTo(svc_mgmt_num);
         assertThat(customers.getCust_num()).isEqualTo(cust_num);
         assertThat(customers.getCust_nm()).isEqualTo(cust_nm);
         assertThat(customers.getGender_cd()).isEqualTo(gender_cd);
+        assertThat(customers.getSvc_mgmt_num()).isEqualTo(svc_mgmt_num);
     }
 
 
