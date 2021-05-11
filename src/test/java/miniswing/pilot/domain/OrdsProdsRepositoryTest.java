@@ -32,12 +32,12 @@ public class OrdsProdsRepositoryTest {
         //given
         long svc_mgmt_num = 1234567890;
         long cust_num = 1234567890;
-//        Prods prods = "NA00000001";
+        String prod_id = "NA00000001";
         String svc_scrb_dt = "20210428";
 
         ordsProdsRepository.save(OrdsProds.builder()
                 .svc_mgmt_num(svc_mgmt_num)
-//                .cust_num(cust_num)
+//                .customers.getCust_num(cust_num)
  //               .prods(prod_id)
                 //.prods(prods)
                 .svc_scrb_dt(svc_scrb_dt)
