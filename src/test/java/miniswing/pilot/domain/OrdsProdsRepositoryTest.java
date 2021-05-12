@@ -1,6 +1,7 @@
 package miniswing.pilot.domain;
 
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,19 @@ public class OrdsProdsRepositoryTest {
     OrdsProdsRepository ordsProdsRepository;
 
     @Autowired
-    ProductsRepository productsRepository;
+    ProdsRepository prodsRepository;
+
+    @Autowired
+    CustomersRepository customersRepository;
+
+    List<Prods> prods;
+    List<Customers> customers;
+
+    @Before
+    public void setup() {
+        prods = prodsRepository.findAll();
+        customers = customersRepository.findAll();
+    }
 
     @After
     public void cleanup() {
@@ -30,15 +43,16 @@ public class OrdsProdsRepositoryTest {
     public void 오더상품정보_조회된다() {
 
         //given
-        long svc_mgmt_num = 1234567890;
-        long cust_num = 1234567890;
+        long svc_mgmt_num = 1234567891;
+        long cust_num = 1000000001;
         String prod_id = "NA00000001";
         String svc_scrb_dt = "20210428";
 
         ordsProdsRepository.save(OrdsProds.builder()
                 .svc_mgmt_num(svc_mgmt_num)
 //                .customers.getCust_num(cust_num)
- //               .prods(prod_id)
+                .prods(prods.get(0))
+//                .customers(customers.get(0))
                 //.prods(prods)
                 .svc_scrb_dt(svc_scrb_dt)
                 .build());
@@ -50,7 +64,8 @@ public class OrdsProdsRepositoryTest {
         OrdsProds ordsProds = ordsProdsList.get(0);
         assertThat(ordsProds.getSvc_mgmt_num()).isEqualTo(svc_mgmt_num);
 //        assertThat(ordsProds.getCust_num()).isEqualTo(cust_num);
-//        assertThat(ordsProds.getProds()).isEqualTo(prod_id);
+        assertThat(ordsProds.getProds()).isEqualTo(prods.get(0));
+//        assertThat(ordsProds.getCustomers()).isEqualTo(customers.get(0));
         assertThat(ordsProds.getSvc_scrb_dt()).isEqualTo(svc_scrb_dt);
     }
 

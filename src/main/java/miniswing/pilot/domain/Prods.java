@@ -27,4 +27,12 @@ public class Prods {
         this.prod_id = prod_id;
         this.prod_nm = prod_nm;
     }
+
+    public boolean equals(Object other) {
+        if (!(other instanceof Prods)) {
+            return false;
+        }
+        Prods otherProds = (Prods)other;
+        return prod_id.equals(otherProds.getProd_id());
+    }
 }
