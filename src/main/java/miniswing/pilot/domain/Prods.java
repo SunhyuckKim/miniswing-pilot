@@ -22,9 +22,6 @@ public class Prods {
     @Column(length = 100, nullable = false)
     private String prod_nm;
 
-    @OneToMany (fetch = FetchType.LAZY, mappedBy = "prods")
-    private List<OrdsProds> ordsProds = new ArrayList<>();
-
     @Builder
     public Prods(String prod_id, String prod_nm) {
         this.prod_id = prod_id;
